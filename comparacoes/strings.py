@@ -1,10 +1,11 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 __author__ = 'infante'
 
 u"""Módulo para comparação de performance para algumas operações com strings em python"""
 
 import time
 from collections import OrderedDict
+
 
 def comparacao_de_concatenacao():
     resultados = OrderedDict({1: None, 2: None, 3: None})
@@ -19,12 +20,12 @@ def comparacao_de_concatenacao():
     inicio = time.time()
     for n in range(1000000):
         nums.append(str(n))
-    saida = ''.join(nums)
+    ''.join(nums)
     fim = time.time()
     resultados[2] = fim - inicio
 
     inicio = time.time()
-    saida = ''.join([str(num) for num in range(1000000)])
+    ''.join([str(num) for num in range(1000000)])
     fim = time.time()
     resultados[3] = fim - inicio
 

@@ -124,8 +124,8 @@ def problema_doze():
     numeros = []
     for i in xrange(1000, 3001):
         flag = True
-        for c in str(i):
-            if int(c) % 2 == 0:
+        for caractere in str(i):
+            if int(caractere) % 2 == 0:
                 flag = False
                 break
         if flag:
@@ -145,12 +145,80 @@ def problema_treze():
     letras = 0
     numeros = 0
     entrada = raw_input(u"Informe a sua string de entrada: ")
-    for c in entrada:
-        if c.isdigit():
-            numeros +=1
-        elif c.isalpha():
-            letras +=1
-    print "LETTERS {0}".format(letras)
-    print "DIGITS {0}".format(numeros)
+    for caractere in entrada:
+        if caractere.isdigit():
+            numeros += 1
+        elif caractere.isalpha():
+            letras += 1
+    print "LETRAS {0}".format(letras)
+    print "DIGITOS {0}".format(numeros)
 
-problema_treze()
+
+def problema_quatorze():
+    u"""
+        Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+        Suppose the following input is supplied to the program:
+        Hello world!
+        Then, the output should be:
+            UPPER CASE 1
+            LOWER CASE 9
+    """
+
+    uppercase = 0
+    lowercase = 0
+    entrada = raw_input(u"Informe a sua string de entrada: ")
+    for caractere in entrada:
+        if caractere.isupper():
+            uppercase += 1
+        elif caractere.islower():
+            lowercase += 1
+        else:
+            pass
+    print "UPPER: {0}".format(uppercase)
+    print "LOWER: {0}".format(lowercase)
+
+
+def problema_quinze():
+    u"""
+        Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.
+        Suppose the following input is supplied to the program:
+            9
+        Then, the output should be:
+            11106
+    """
+
+    entrada = raw_input(u"Informe um dígito de entrada: ")
+    soma = sum([int(entrada * quantidade) for quantidade in range(1, 5)])
+    print soma
+
+
+def problema_dezesseis():
+    u"""
+        Use a list comprehension to square each odd number in a list. The list is input by a sequence of
+        comma-separated numbers. Suppose the following input is supplied to the program:
+            1,2,3,4,5,6,7,8,9
+        Then, the output should be:
+            1,9,25,49,81
+    """
+
+    entrada = raw_input(u"Informe uma sequéncia de números separados por vírgula: ")
+    print ','.join([str(int(numero)**2) for numero in entrada.split(',') if int(numero) % 2])
+
+
+def problema_dezessete():
+    u"""
+        Write a program that computes the net amount of a bank account based a transaction log from console input.
+        The transaction log format is shown as following:
+            D 100
+            W 200
+            ¡­
+            D means deposit while W means withdrawal.
+            Suppose the following input is supplied to the program:
+            D 300
+            D 300
+            W 200
+            D 100
+        Then, the output should be:
+            500
+    """
+problema_dezesseis()
